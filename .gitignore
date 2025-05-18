@@ -1,1 +1,3 @@
 kubelet-serving-approver
+manifests/release
+manifests/release.yaml

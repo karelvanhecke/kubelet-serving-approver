@@ -41,7 +41,7 @@ setup::image::load() {
 }
 
 setup::image::deploy() {
-    kubectl apply -k manifests &>/dev/null\
+    kubectl apply -k manifests/base &>/dev/null\
     || err::cleanup "Failed to deploy image"
     kubectl wait -n kubelet-serving-approver --for=condition=Available --timeout=1m deployment/kubelet-serving-approver &>/dev/null \
     || err::cleanup "Deployment not ready after 1 minute"
