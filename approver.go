@@ -27,7 +27,6 @@ const (
 
 var (
 	policy               *string      = flag.StringP("policy", "p", "Static", "Select a policy for the approver. Policies: Static")
-	staticRequireFQDN    *bool        = flag.Bool("static-require-fqdn", false, "Static policy: require FQDN")
 	staticAllowedDomains *[]string    = flag.StringSlice("static-allowed-domains", nil, "Static policy: list of allowed domains")
 	staticAllowedSubnets *[]net.IPNet = flag.IPNetSlice("static-allowed-subnets", nil, "Static policy: list of allowed subnets")
 	staticMatchHost      *string      = flag.String("static-match-host", "", "Static policy: regex to match hosts against")
@@ -91,7 +90,6 @@ func main() {
 
 func staticPolicy() p.Policy {
 	s := policies.Static{
-		RequireFQDN:    *staticRequireFQDN,
 		AllowedDomains: *staticAllowedDomains,
 		AllowedSubnets: *staticAllowedSubnets,
 	}

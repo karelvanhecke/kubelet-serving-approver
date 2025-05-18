@@ -10,7 +10,6 @@ import (
 )
 
 type Static struct {
-	RequireFQDN    bool           `yaml:"requireFQDN"`
 	AllowedDomains []string       `yaml:"allowedDomains"`
 	AllowedSubnets []net.IPNet    `yaml:"allowedSubnets"`
 	MatchHost      *regexp.Regexp `yaml:"matchHost"`
@@ -40,21 +39,15 @@ func (s Static) Approve(req policy.Request) (ok bool, err error) {
 
 func (s Static) CheckDNSNames(requested []string, reported []string) (ok bool) {
 	for _, dn := range requested {
-		if s.RequireFQDN {
-			if !dns.IsFqdn(dn) {
-				return false
+		allowed := s.AllowedDomains == nil
+		for _, ad := range s.AllowedDomains {
+			allowed = dns.IsSubDomain(ad, dn)
+			if allowed {
+				break
 			}
-
-			allowed := s.AllowedDomains == nil
-			for _, ad := range s.AllowedDomains {
-				allowed = dns.IsSubDomain(ad, dn)
-				if allowed {
-					break
-				}
-			}
-			if !allowed {
-				return false
-			}
+		}
+		if !allowed {
+			return false
 		}
 
 		if s.MatchHost != nil {
