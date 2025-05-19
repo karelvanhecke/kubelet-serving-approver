@@ -37,6 +37,8 @@ jobs:
     needs: ["release-please"]
     if: ${{ needs.release-please.outputs.release_created == 'true' }}
     runs-on: ubuntu-latest
+    outputs:
+      digest: ${{ steps.build.outputs.digest }}
     permissions:
       packages: write
       id-token: write
@@ -104,7 +106,7 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Generate manifests
-        run: tools/release/generate_manifests.sh v${{ needs.release-please.outputs.version }}
+        run: tools/release/generate_manifests.sh v${{ needs.release-please.outputs.version }}@${{ needs.container.outputs.digest }}
 
       - name: Upload manifest to release artifacts
         run: |
