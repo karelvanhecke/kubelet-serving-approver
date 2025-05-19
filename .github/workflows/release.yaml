@@ -119,8 +119,8 @@ jobs:
       - name: Push manifest to OCI registry
         id: manifest
         run: |
-          DIGEST=$(flux push artifact oci://${{ env.MANIFEST }}v${{ needs.release-please.outputs.version }} \
-          --path="manifests/release.yaml" \
+          DIGEST=$(flux push artifact oci://${{ env.MANIFEST }}:v${{ needs.release-please.outputs.version }} \
+          --path="./manifests/release.yaml" \
           --source="${{ github.repositoryUrl }}" \
           --revision="${{ needs.release-please.outputs.tag_name }}@sha1:${{ needs.release-please.outputs.sha }}" \
           -o json | jq -r .digest)
