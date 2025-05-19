@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.1](https://github.com/karelvanhecke/kubelet-serving-approver/compare/v0.1.0...v0.1.1) (2025-05-19)
+
+
+### Bug Fixes
+
+* **manifests:** trigger new release to fix missing manifests ([#12](https://github.com/karelvanhecke/kubelet-serving-approver/issues/12)) ([95187c5](https://github.com/karelvanhecke/kubelet-serving-approver/commit/95187c5c93770d6e2477d45811f99f421bc97671))
+
 ## 0.1.0 (2025-05-18)
 
 
