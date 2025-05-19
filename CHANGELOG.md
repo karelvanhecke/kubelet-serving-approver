@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.2](https://github.com/karelvanhecke/kubelet-serving-approver/compare/v0.1.1...v0.1.2) (2025-05-19)
+
+
+### Features
+
+* **manifests:** release manifests with images pinned by digest ([#16](https://github.com/karelvanhecke/kubelet-serving-approver/issues/16)) ([f77e491](https://github.com/karelvanhecke/kubelet-serving-approver/commit/f77e491a897e49600387d9a0bfdbaccfd617ab83))
+
 ## [0.1.1](https://github.com/karelvanhecke/kubelet-serving-approver/compare/v0.1.0...v0.1.1) (2025-05-19)
 
 
