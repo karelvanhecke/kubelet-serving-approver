@@ -1,0 +1,73 @@
+name: Code scanning
+
+on:
+  schedule:
+    - cron: '15 1 * * *'
+  push:
+    branches:
+      - main
+    paths:
+      - 'go.mod'
+      - 'go.sum'
+      - '*.go'
+      - '**/*.go'
+
+jobs:
+  codeql:
+    name: CodeQL
+    runs-on: ubuntu-latest
+    permissions:
+      security-events: write
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+
+      - name: Setup go
+        uses: actions/setup-go@d35c59abb061a4a6fb18e82ac0862c26744d6ab5 # v5.5.0
+        with:
+          go-version: 1.24.3
+
+      - name: Init
+        uses: github/codeql-action/init@60168efe1c415ce0f5521ea06d5c2062adbeed1b # v3.28.17
+        with:
+          languages: go
+          build-mode: autobuild
+          dependency-caching: true
+
+      - name: Analyze
+        uses: github/codeql-action/analyze@60168efe1c415ce0f5521ea06d5c2062adbeed1b # v3.28.17
+
+  osv-scanner:
+    name: OSV-scanner
+    runs-on: ubuntu-latest
+    permissions:
+      actions: read
+      contents: read
+      security-events: write
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+      - name: Run scanner
+        uses: google/osv-scanner-action/osv-scanner-action@8dded7155905cd666190a12dc9997000e58d163d # v2.0.2
+        with:
+          scan-args: |-
+            --output=results.json
+            --format=json
+            -r
+            ./
+        continue-on-error: true
+      - name: Run osv-scanner-reporter
+        uses: google/osv-scanner-action/osv-reporter-action@8dded7155905cd666190a12dc9997000e58d163d # v2.0.2
+        with:
+          scan-args: |-
+            --output=results.sarif
+            --new=results.json
+            --gh-annotations=false
+            --fail-on-vuln=true
+      - name: Upload to code-scanning
+        if: ${{ !cancelled() }}
+        uses: github/codeql-action/upload-sarif@45775bd8235c68ba998cffa5171334d58593da47 # v3.28.15
+        with:
+          sarif_file: results.sarif
