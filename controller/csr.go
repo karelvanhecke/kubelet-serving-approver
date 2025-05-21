@@ -7,6 +7,7 @@ import (
 	"context"
 	"crypto/x509"
 	"encoding/pem"
+	"fmt"
 	"net"
 	"strings"
 
@@ -27,6 +28,7 @@ type CSRReconciler struct {
 }
 
 func (cr *CSRReconciler) Reconcile(ctx context.Context, req ctrl.Request) (res ctrl.Result, err error) {
+	logger := ctrl.LoggerFrom(ctx)
 	csr := &certv1.CertificateSigningRequest{}
 
 	if err := cr.Get(ctx, req.NamespacedName, csr); err != nil {
@@ -74,6 +76,7 @@ func (cr *CSRReconciler) Reconcile(ctx context.Context, req ctrl.Request) (res c
 	}
 
 	if ok {
+		logger.Info(fmt.Sprintf("%s approved", csr.Name), "policy", policyName)
 		csr.Status.Conditions = []certv1.CertificateSigningRequestCondition{
 			{
 				Type:    certv1.CertificateApproved,
@@ -83,6 +86,7 @@ func (cr *CSRReconciler) Reconcile(ctx context.Context, req ctrl.Request) (res c
 			},
 		}
 	} else {
+		logger.Info(fmt.Sprintf("%s denied", csr.Name), "policy", policyName)
 		csr.Status.Conditions = []certv1.CertificateSigningRequestCondition{
 			{
 				Type:    certv1.CertificateDenied,
