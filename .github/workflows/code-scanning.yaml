@@ -11,11 +11,21 @@ on:
       - 'go.sum'
       - '*.go'
       - '**/*.go'
+  pull_request:
+    branches:
+      - main
 
 jobs:
+  check-changes:
+    name: Check changes
+    if: ${{ github.event_name == 'pull_request' }}
+    uses: ./.github/workflows/check-changes.yaml
+
   codeql:
     name: CodeQL
     runs-on: ubuntu-latest
+    needs: ["check-changes"]
+    if: ${{ (!cancelled() && github.event_name != 'pull_request') || needs.check-changes.outputs.go == 'true' }}
     permissions:
       security-events: write
     steps:
@@ -38,19 +48,24 @@ jobs:
         uses: github/codeql-action/analyze@60168efe1c415ce0f5521ea06d5c2062adbeed1b # v3.28.17
 
   osv-scanner:
-    name: OSV-scanner
+    name: osv-scanner
     runs-on: ubuntu-latest
+    needs: ["check-changes"]
+    if: ${{ (!cancelled() && github.event_name != 'pull_request') || needs.check-changes.outputs.go == 'true' }}
     permissions:
       actions: read
       contents: read
       security-events: write
     steps:
-      - name: Checkout code
+      - name: Checkout code (push|schedule)
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        if: ${{ github.event_name != 'pull_request' }}
         with:
           persist-credentials: false
-      - name: Run scanner
+
+      - name: Run scanner (push|schedule)
         uses: google/osv-scanner-action/osv-scanner-action@8dded7155905cd666190a12dc9997000e58d163d # v2.0.2
+        if: ${{ github.event_name != 'pull_request' }}
         with:
           scan-args: |-
             --output=results.json
@@ -58,14 +73,69 @@ jobs:
             -r
             ./
         continue-on-error: true
-      - name: Run osv-scanner-reporter
+
+      - name: Run osv-scanner-reporter (push|schedule)
         uses: google/osv-scanner-action/osv-reporter-action@8dded7155905cd666190a12dc9997000e58d163d # v2.0.2
+        if: ${{ github.event_name != 'pull_request' }}
         with:
           scan-args: |-
             --output=results.sarif
             --new=results.json
             --gh-annotations=false
             --fail-on-vuln=true
+            - name: Checkout code
+
+      - name: Checkout code (pull request)
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        if: ${{ github.event_name == 'pull_request' }}
+        with:
+          fetch-depth: 0
+
+      - name: Checkout target branch (pull request)
+        if: ${{ github.event_name == 'pull_request' }}
+        run: |
+          git checkout $GITHUB_BASE_REF
+          git submodule update --recursive
+
+      - name: Run scanner on existing code (pull request)
+        uses: google/osv-scanner-action/osv-scanner-action@8dded7155905cd666190a12dc9997000e58d163d # v2.0.2
+        if: ${{ github.event_name == 'pull_request' }}
+        continue-on-error: true
+        with:
+          scan-args: |-
+            --format=json
+            --output=old-results.json
+            -r
+            ./
+
+      - name: Checkout current branch (pull request)
+        if: ${{ github.event_name == 'pull_request' }}
+        run: |
+          git checkout -f $GITHUB_SHA
+          git submodule update --recursive
+
+      - name: Run scanner on new code (pull request)
+        uses: google/osv-scanner-action/osv-scanner-action@8dded7155905cd666190a12dc9997000e58d163d # v2.0.2
+        if: ${{ github.event_name == 'pull_request' }}
+        with:
+          scan-args: |-
+            --format=json
+            --output=new-results.json
+            -r
+            ./
+        continue-on-error: true
+
+      - name: Run osv-scanner-reporter (pull request)
+        uses: google/osv-scanner-action/osv-reporter-action@8dded7155905cd666190a12dc9997000e58d163d # v2.0.2
+        if: ${{ github.event_name == 'pull_request' }}
+        with:
+          scan-args: |-
+            --output=results.sarif
+            --old=old-results.json
+            --new=new-results.json
+            --gh-annotations=true
+            --fail-on-vuln=true
+
       - name: Upload to code-scanning
         if: ${{ !cancelled() }}
         uses: github/codeql-action/upload-sarif@45775bd8235c68ba998cffa5171334d58593da47 # v3.28.15

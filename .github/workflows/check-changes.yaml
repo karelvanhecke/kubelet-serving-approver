@@ -1,0 +1,34 @@
+name: Check changes
+on:
+  workflow_call:
+    outputs:
+      go:
+        description: Go code changed
+        value: ${{ jobs.paths-filter.outputs.go }}
+      deps:
+        description: Dependencies changed
+        value: ${{ jobs.paths-filter.outputs.deps }}
+
+jobs:
+  paths-filter:
+    name: Paths filter
+    runs-on: ubuntu-latest
+    outputs:
+      go: ${{ steps.changes.outputs.go }}
+      deps: ${{ steps.changes.outputs.deps }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+      - name: Check changes
+        id: changes
+        uses: dorny/paths-filter@de90cc6fb38fc0963ad72b210f1f284cd68cea36 # v3.0.2
+        with:
+          filters: |
+            go:
+              - '*.go'
+              - 'go.mod'
+              - 'go.sum'
+              - '**/*.go'
+            deps:
+              - 'go.mod'
+              - '.github/workflows/*'
