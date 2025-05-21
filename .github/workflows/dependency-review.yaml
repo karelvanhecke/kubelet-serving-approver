@@ -19,14 +19,8 @@ jobs:
         with:
           filters: |
             deps:
-              - '!docs/**'
-              - '!tools/**'
-              - '!*.md'
-              - '!**/*.md'
-              - '!.gitignore'
-              - '!manifests/**'
-              - '!.github/*'
-              - '!tests/**'
+              - 'go.mod'
+              - '.github/workflows/*'
 
   review:
     name: Review
