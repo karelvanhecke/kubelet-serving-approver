@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.3](https://github.com/karelvanhecke/kubelet-serving-approver/compare/v0.1.2...v0.1.3) (2025-05-27)
+
+
+### Features
+
+* **csr:** log info when reconcile is successful ([#25](https://github.com/karelvanhecke/kubelet-serving-approver/issues/25)) ([cbae0a2](https://github.com/karelvanhecke/kubelet-serving-approver/commit/cbae0a29c4b6c1c395d0025f7947784838781564))
+
 ## [0.1.2](https://github.com/karelvanhecke/kubelet-serving-approver/compare/v0.1.1...v0.1.2) (2025-05-19)
 
 
