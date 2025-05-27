@@ -93,7 +93,12 @@ func (cr *CSRReconciler) Reconcile(ctx context.Context, req ctrl.Request) (res c
 		}
 	}
 
-	return ctrl.Result{}, cr.SubResource("approval").Update(ctx, csr)
+	if err := cr.SubResource("approval").Update(ctx, csr); err != nil {
+		return ctrl.Result{}, err
+	}
+
+	ctrl.LoggerFrom(ctx).Info("Reconcile successful", "approved", ok, "policy", policyName, "node", node.Name)
+	return ctrl.Result{}, nil
 }
 
 func (cr *CSRReconciler) SetupWithManager(m ctrl.Manager) error {
