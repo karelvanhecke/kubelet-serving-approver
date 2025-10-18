@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.1.4](https://github.com/karelvanhecke/kubelet-serving-approver/compare/v0.1.3...v0.1.4) (2025-10-18)
+
+
+### Bug Fixes
+
+* **deps:** update Go depedencies ([#36](https://github.com/karelvanhecke/kubelet-serving-approver/issues/36)) ([bb053dd](https://github.com/karelvanhecke/kubelet-serving-approver/commit/bb053ddf371abd2fdd170ed75bcf1156a2b9b9d5))
+* **deps:** update go to v1.25.3 ([#33](https://github.com/karelvanhecke/kubelet-serving-approver/issues/33)) ([8282129](https://github.com/karelvanhecke/kubelet-serving-approver/commit/828212993b56483d25bc861b81a12b83d6280ced))
+
 ## [0.1.3](https://github.com/karelvanhecke/kubelet-serving-approver/compare/v0.1.2...v0.1.3) (2025-05-27)
 
 
