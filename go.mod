@@ -1,6 +1,6 @@
 module github.com/karelvanhecke/kubelet-serving-approver
 
-go 1.24.2
+go 1.25.3
 
 require (
 	github.com/miekg/dns v1.1.66
