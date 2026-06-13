@@ -5,8 +5,8 @@ go 1.26.0
 require (
 	github.com/miekg/dns v1.1.72
 	github.com/spf13/pflag v1.0.10
-	k8s.io/api v0.36.0
-	k8s.io/apimachinery v0.36.0
+	k8s.io/api v0.36.2
+	k8s.io/apimachinery v0.36.2
 	k8s.io/klog/v2 v2.140.0
 	sigs.k8s.io/controller-runtime v0.24.1
 )
