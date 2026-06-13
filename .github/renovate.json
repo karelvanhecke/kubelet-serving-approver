@@ -11,6 +11,11 @@
     {
       "matchDepNames": "go",
       "minimumReleaseAge": "1 day"
+    },
+    {
+      "matchFileNames": ["Dockerfile"],
+      "matchDatasources": ["docker"],
+      "semanticCommitType": "fix"
     }
   ]
 }
