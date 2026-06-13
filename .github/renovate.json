@@ -1,3 +1,16 @@
 {
-  "$schema": "https://docs.renovatebot.com/renovate-schema.json"
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "packageRules": [
+    {
+      "groupName": "go",
+      "matchDepNames": [
+        "go",
+        "docker.io/golang"
+      ]
+    },
+    {
+      "matchDepNames": "go",
+      "minimumReleaseAge": "1 day"
+    }
+  ]
 }
