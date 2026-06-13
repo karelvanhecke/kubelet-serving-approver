@@ -67,7 +67,8 @@ jobs:
         if: ${{ github.event_name != 'pull_request' }}
         with:
           scan-args: |-
-            --output=results.json
+            --config=.github/osv-scanner.toml
+            --output-file=results.json
             --format=json
             -r
             ./
@@ -78,7 +79,7 @@ jobs:
         if: ${{ github.event_name != 'pull_request' }}
         with:
           scan-args: |-
-            --output=results.sarif
+            --output-files=results.sarif
             --new=results.json
             --gh-annotations=false
             --fail-on-vuln=false
@@ -101,8 +102,9 @@ jobs:
         continue-on-error: true
         with:
           scan-args: |-
+            --config=.github/osv-scanner.toml
             --format=json
-            --output=old-results.json
+            --output-file=old-results.json
             -r
             ./
 
@@ -117,8 +119,9 @@ jobs:
         if: ${{ github.event_name == 'pull_request' }}
         with:
           scan-args: |-
+            --config=.github/osv-scanner.toml
             --format=json
-            --output=new-results.json
+            --output-file=new-results.json
             -r
             ./
         continue-on-error: true
@@ -128,7 +131,7 @@ jobs:
         if: ${{ github.event_name == 'pull_request' }}
         with:
           scan-args: |-
-            --output=results.sarif
+            --output-files=results.sarif
             --old=old-results.json
             --new=new-results.json
             --gh-annotations=true
