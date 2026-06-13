@@ -7,6 +7,6 @@ RUN go mod download && go mod verify
 COPY . .
 RUN CGO_ENABLED=0 go build -ldflags "-s -w" -trimpath github.com/karelvanhecke/kubelet-serving-approver
 
-FROM gcr.io/distroless/static-debian12:nonroot@sha256:e8a4044e0b4ae4257efa45fc026c0bc30ad320d43bd4c1a7d5271bd241e386d0
+FROM gcr.io/distroless/static-debian12:nonroot@sha256:d093aa3e30dbadd3efe1310db061a14da60299baff8450a17fe0ccc514a16639
 COPY --from=build /src/kubelet-serving-approver /bin/kubelet-serving-approver
 ENTRYPOINT [ "kubelet-serving-approver" ]
