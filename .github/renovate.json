@@ -17,5 +17,13 @@
       "matchDatasources": ["docker"],
       "semanticCommitType": "fix"
     }
+  ],
+  "customManagers": [
+    {
+      "managerFilePatterns":[".github/osv-scanner.toml"],
+      "depNameTemplate": "go",
+      "datasourceTemplate": "golang-version",
+      "matchStrings": ["GoVersionOverride = \"(?<currentValue>.+?)\""]
+    }
   ]
 }
