@@ -25,7 +25,7 @@ jobs:
           private-key: ${{ secrets.RELEASE_PLEASE_KEY }}
 
       - name: Run Release Please
-        uses: googleapis/release-please-action@c2a5a2bd6a758a0937f1ddb1e8950609867ed15c # v4.3.0
+        uses: googleapis/release-please-action@5c625bfb5d1ff62eadeeb3772007f7f66fdcf071 # v4.4.1
         id: release-please
         with:
           token: ${{ steps.app-token.outputs.token }}
@@ -164,7 +164,7 @@ jobs:
           private-key: ${{ secrets.RELEASE_PLEASE_KEY }}
 
       - name: Run Release Please
-        uses: googleapis/release-please-action@c2a5a2bd6a758a0937f1ddb1e8950609867ed15c # v4.3.0
+        uses: googleapis/release-please-action@5c625bfb5d1ff62eadeeb3772007f7f66fdcf071 # v4.4.1
         id: release-please
         with:
           token: ${{ steps.app-token.outputs.token }}
