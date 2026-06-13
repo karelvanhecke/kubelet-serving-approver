@@ -90,7 +90,7 @@ jobs:
         uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
 
       - name: Setup flux
-        uses: fluxcd/flux2/action@4a15fa6a023259353ef750acf1c98fe88407d4d0 # v2.7.2
+        uses: fluxcd/flux2/action@1fd61a06264d71cf445ed55c4f14d401d26a1c64 # v2.8.8
         with:
           version: 2.7.2
 
