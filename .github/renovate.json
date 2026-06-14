@@ -20,6 +20,7 @@
   ],
   "customManagers": [
     {
+      "customType": "regex",
       "managerFilePatterns":[".github/osv-scanner.toml"],
       "depNameTemplate": "go",
       "datasourceTemplate": "golang-version",
