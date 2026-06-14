@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.1.6](https://github.com/karelvanhecke/kubelet-serving-approver/compare/v0.1.5...v0.1.6) (2026-06-14)
+
+
+### Bug Fixes
+
+* **deps:** update go transitive dependencies ([#79](https://github.com/karelvanhecke/kubelet-serving-approver/issues/79)) ([8a81a80](https://github.com/karelvanhecke/kubelet-serving-approver/commit/8a81a806ef0a27379973319c14adc783ebc87210))
+* **deps:** update kubernetes monorepo to v0.36.2 ([#58](https://github.com/karelvanhecke/kubelet-serving-approver/issues/58)) ([5326e26](https://github.com/karelvanhecke/kubelet-serving-approver/commit/5326e26c0390f73270230ba0a488e077d94e8b10))
+
 ## [0.1.5](https://github.com/karelvanhecke/kubelet-serving-approver/compare/v0.1.4...v0.1.5) (2026-06-13)
 
 
