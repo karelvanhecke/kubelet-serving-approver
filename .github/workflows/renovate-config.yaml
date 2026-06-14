@@ -1,4 +1,5 @@
-name: Renovate Config
+---
+name: Renovate config
 
 on:
   pull_request:
