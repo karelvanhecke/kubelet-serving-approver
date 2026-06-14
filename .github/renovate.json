@@ -26,5 +26,6 @@
       "datasourceTemplate": "golang-version",
       "matchStrings": ["GoVersionOverride = \"(?<currentValue>.+?)\""]
     }
-  ]
+  ],
+  "postUpdateOptions": ["gomodTidy"]
 }
