@@ -13,19 +13,42 @@
       "minimumReleaseAge": "1 day"
     },
     {
-      "matchFileNames": ["Dockerfile"],
-      "matchDatasources": ["docker"],
+      "matchFileNames": [
+        "Dockerfile"
+      ],
+      "matchDatasources": [
+        "docker"
+      ],
       "semanticCommitType": "fix"
+    },
+    {
+      "matchCurrentVersion": "!/^v?0/",
+      "matchUpdateTypes": [
+        "minor"
+      ],
+      "automerge": true
+    },
+    {
+      "matchUpdateTypes": [
+        "patch"
+      ],
+      "automerge": true
     }
   ],
   "customManagers": [
     {
       "customType": "regex",
-      "managerFilePatterns":[".github/osv-scanner.toml"],
+      "managerFilePatterns": [
+        ".github/osv-scanner.toml"
+      ],
       "depNameTemplate": "go",
       "datasourceTemplate": "golang-version",
-      "matchStrings": ["GoVersionOverride = \"(?<currentValue>.+?)\""]
+      "matchStrings": [
+        "GoVersionOverride = \"(?<currentValue>.+?)\""
+      ]
     }
   ],
-  "postUpdateOptions": ["gomodTidy"]
+  "postUpdateOptions": [
+    "gomodTidy"
+  ]
 }
