@@ -33,6 +33,11 @@
         "patch"
       ],
       "automerge": true
+    },
+    {
+      "matchDepNames": ["docker.io/golang"],
+      "matchUpdateTypes":["digest"],
+      "enabled": false
     }
   ],
   "customManagers": [
