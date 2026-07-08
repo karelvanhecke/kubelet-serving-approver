@@ -5,12 +5,10 @@
       "groupName": "go",
       "matchDepNames": [
         "go",
-        "docker.io/golang"
-      ]
-    },
-    {
-      "matchDepNames": "go",
-      "minimumReleaseAge": "1 day"
+        "docker.io/golang",
+        "go-security-level"
+      ],
+      "minimumGroupSize": 3
     },
     {
       "matchFileNames": [
@@ -46,7 +44,7 @@
       "managerFilePatterns": [
         ".github/osv-scanner.toml"
       ],
-      "depNameTemplate": "go",
+      "depNameTemplate": "go-security-level",
       "datasourceTemplate": "golang-version",
       "matchStrings": [
         "GoVersionOverride = \"(?<currentValue>.+?)\""
