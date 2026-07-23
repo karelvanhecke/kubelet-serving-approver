@@ -1,5 +1,8 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "security:gomodIndirectSecurityUpdates"
+  ],
   "packageRules": [
     {
       "groupName": "go",
@@ -33,8 +36,12 @@
       "automerge": true
     },
     {
-      "matchDepNames": ["docker.io/golang"],
-      "matchUpdateTypes":["digest"],
+      "matchDepNames": [
+        "docker.io/golang"
+      ],
+      "matchUpdateTypes": [
+        "digest"
+      ],
       "enabled": false
     }
   ],
