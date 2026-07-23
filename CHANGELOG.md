@@ -1,5 +1,15 @@
 # Changelog
 
+## [0.1.7](https://github.com/karelvanhecke/kubelet-serving-approver/compare/v0.1.6...v0.1.7) (2026-07-23)
+
+
+### Bug Fixes
+
+* **deps:** update docker.io/golang docker tag to v1.26.5 ([#96](https://github.com/karelvanhecke/kubelet-serving-approver/issues/96)) ([e863972](https://github.com/karelvanhecke/kubelet-serving-approver/commit/e863972388ed0489bf76c54dff9ce57579525bcd))
+* **deps:** update kubernetes monorepo to v0.36.3 ([#111](https://github.com/karelvanhecke/kubelet-serving-approver/issues/111)) ([9bc5f7a](https://github.com/karelvanhecke/kubelet-serving-approver/commit/9bc5f7a4a61fdf4c43be1b0b19b4c13f13c4095f))
+* **Dockerfile:** Golang container image digest ([#112](https://github.com/karelvanhecke/kubelet-serving-approver/issues/112)) ([f9dc4f4](https://github.com/karelvanhecke/kubelet-serving-approver/commit/f9dc4f44045f731871c41a615c1f66bb3e5835ea))
+* **Dockerfile:** switch to Debian 13 based image ([#115](https://github.com/karelvanhecke/kubelet-serving-approver/issues/115)) ([4c21c11](https://github.com/karelvanhecke/kubelet-serving-approver/commit/4c21c1109054de92b303d77322e7eac31b5a67ec))
+
 ## [0.1.6](https://github.com/karelvanhecke/kubelet-serving-approver/compare/v0.1.5...v0.1.6) (2026-06-14)
 
 
