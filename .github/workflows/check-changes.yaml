@@ -9,6 +9,9 @@ on:
       deps:
         description: Dependencies changed
         value: ${{ jobs.paths-filter.outputs.deps }}
+      container:
+        description: Container changed
+        value: ${{ jobs.paths-filter.outputs.container }}
 
 jobs:
   paths-filter:
@@ -17,6 +20,7 @@ jobs:
     outputs:
       go: ${{ steps.changes.outputs.go }}
       deps: ${{ steps.changes.outputs.deps }}
+      container: ${{ steps.changes.outputs.container }}
     steps:
       - name: Checkout code
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
@@ -26,6 +30,8 @@ jobs:
         uses: dorny/paths-filter@7b450fff21473bca461d4b92ce414b9d0420d706 # v4.0.2
         with:
           filters: |
+            container:
+              - Dockerfile
             go:
               - '*.go'
               - 'go.mod'
