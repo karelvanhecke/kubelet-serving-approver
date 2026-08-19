@@ -3,7 +3,7 @@ module github.com/karelvanhecke/kubelet-serving-approver
 go 1.26.0
 
 require (
-	github.com/miekg/dns v1.1.72
+	github.com/miekg/dns v1.1.73
 	github.com/spf13/pflag v1.0.10
 	k8s.io/api v0.36.3
 	k8s.io/apimachinery v0.36.3
