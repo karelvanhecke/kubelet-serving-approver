@@ -1,5 +1,16 @@
 # Changelog
 
+## [0.1.8](https://github.com/karelvanhecke/kubelet-serving-approver/compare/v0.1.7...v0.1.8) (2026-08-21)
+
+
+### Bug Fixes
+
+* **deps:** update go to v1.26.6 ([#131](https://github.com/karelvanhecke/kubelet-serving-approver/issues/131)) ([3f47ce6](https://github.com/karelvanhecke/kubelet-serving-approver/commit/3f47ce602449384297f25d66d2dc9b696a87c7f5))
+* **deps:** update go to v1.27.0 ([#137](https://github.com/karelvanhecke/kubelet-serving-approver/issues/137)) ([f2e5753](https://github.com/karelvanhecke/kubelet-serving-approver/commit/f2e5753050ac1c21b380399a52b85f7f8a3aa786))
+* **deps:** update kubernetes monorepo to v0.36.4 ([#139](https://github.com/karelvanhecke/kubelet-serving-approver/issues/139)) ([632006d](https://github.com/karelvanhecke/kubelet-serving-approver/commit/632006d330ed65a58e0e9be20fdd2466b7cd1427))
+* **deps:** update module github.com/miekg/dns to v1.1.73 ([#134](https://github.com/karelvanhecke/kubelet-serving-approver/issues/134)) ([14841cd](https://github.com/karelvanhecke/kubelet-serving-approver/commit/14841cd60fe8064a60d69e8fb96765b861f6cc83))
+* **deps:** update module golang.org/x/mod to v0.40.0 [security] ([#130](https://github.com/karelvanhecke/kubelet-serving-approver/issues/130)) ([f1f305c](https://github.com/karelvanhecke/kubelet-serving-approver/commit/f1f305cc5649a51d8b214a7a30379fc70312d849))
+
 ## [0.1.7](https://github.com/karelvanhecke/kubelet-serving-approver/compare/v0.1.6...v0.1.7) (2026-07-23)
 
 
