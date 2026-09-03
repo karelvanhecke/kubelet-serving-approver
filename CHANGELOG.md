@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.1.9](https://github.com/karelvanhecke/kubelet-serving-approver/compare/v0.1.8...v0.1.9) (2026-09-03)
+
+
+### Bug Fixes
+
+* **deps:** update go to v1.27.1 ([#147](https://github.com/karelvanhecke/kubelet-serving-approver/issues/147)) ([14ec4d5](https://github.com/karelvanhecke/kubelet-serving-approver/commit/14ec4d5dcb011d2d029ae399b967ab57ae1f1a9f))
+* **deps:** update module sigs.k8s.io/controller-runtime to v0.25.0 ([#149](https://github.com/karelvanhecke/kubelet-serving-approver/issues/149)) ([da32d9a](https://github.com/karelvanhecke/kubelet-serving-approver/commit/da32d9a7b2059ff29d478f14d89ffbfa3a4bd63f))
+
 ## [0.1.8](https://github.com/karelvanhecke/kubelet-serving-approver/compare/v0.1.7...v0.1.8) (2026-08-27)
 
 
