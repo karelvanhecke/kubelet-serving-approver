@@ -1,5 +1,16 @@
 # Changelog
 
+## [0.1.9](https://github.com/karelvanhecke/kubelet-serving-approver/compare/v0.1.8...v0.1.9) (2026-09-24)
+
+
+### Bug Fixes
+
+* **deps:** update gcr.io/distroless/static-debian13:nonroot docker digest to e2e927e ([#152](https://github.com/karelvanhecke/kubelet-serving-approver/issues/152)) ([dfc7ff4](https://github.com/karelvanhecke/kubelet-serving-approver/commit/dfc7ff4f258dd68a0f3296643b8ffc6dab4fa51d))
+* **deps:** update go to v1.27.1 ([#147](https://github.com/karelvanhecke/kubelet-serving-approver/issues/147)) ([14ec4d5](https://github.com/karelvanhecke/kubelet-serving-approver/commit/14ec4d5dcb011d2d029ae399b967ab57ae1f1a9f))
+* **deps:** update kubernetes monorepo to v0.37.1 ([#159](https://github.com/karelvanhecke/kubelet-serving-approver/issues/159)) ([58c0bb7](https://github.com/karelvanhecke/kubelet-serving-approver/commit/58c0bb75af9696f934a3b5f8d55fafbf74119064))
+* **deps:** update module sigs.k8s.io/controller-runtime to v0.25.0 ([#149](https://github.com/karelvanhecke/kubelet-serving-approver/issues/149)) ([da32d9a](https://github.com/karelvanhecke/kubelet-serving-approver/commit/da32d9a7b2059ff29d478f14d89ffbfa3a4bd63f))
+* **deps:** update module sigs.k8s.io/controller-runtime to v0.25.1 ([#153](https://github.com/karelvanhecke/kubelet-serving-approver/issues/153)) ([b50c22b](https://github.com/karelvanhecke/kubelet-serving-approver/commit/b50c22b29755422bceb5edb0e2d01dee2c7a9b73))
+
 ## [0.1.8](https://github.com/karelvanhecke/kubelet-serving-approver/compare/v0.1.7...v0.1.8) (2026-08-27)
 
 
