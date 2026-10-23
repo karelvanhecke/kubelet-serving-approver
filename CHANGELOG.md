@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.1.10](https://github.com/karelvanhecke/kubelet-serving-approver/compare/v0.1.9...v0.1.10) (2026-10-23)
+
+
+### Bug Fixes
+
+* **deps:** update gcr.io/distroless/static-debian13:nonroot docker digest to 5167571 ([#171](https://github.com/karelvanhecke/kubelet-serving-approver/issues/171)) ([957cc87](https://github.com/karelvanhecke/kubelet-serving-approver/commit/957cc87b293486fe600eccc4973bb9abfa826420))
+* **deps:** update gcr.io/distroless/static-debian13:nonroot docker digest to d620678 ([#175](https://github.com/karelvanhecke/kubelet-serving-approver/issues/175)) ([a4d761b](https://github.com/karelvanhecke/kubelet-serving-approver/commit/a4d761b92aa6a0d152642785d78e1c0e5ae4dda2))
+* **deps:** update go to v1.27.3 ([#173](https://github.com/karelvanhecke/kubelet-serving-approver/issues/173)) ([83b6e77](https://github.com/karelvanhecke/kubelet-serving-approver/commit/83b6e77e397c8a594fefb91ce1f0cb3c238920f4))
+
 ## [0.1.9](https://github.com/karelvanhecke/kubelet-serving-approver/compare/v0.1.8...v0.1.9) (2026-10-09)
 
 
