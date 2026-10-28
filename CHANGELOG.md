@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.1.11](https://github.com/karelvanhecke/kubelet-serving-approver/compare/v0.1.10...v0.1.11) (2026-10-28)
+
+
+### Bug Fixes
+
+* **deps:** update gcr.io/distroless/static-debian13:nonroot docker digest to 18f4cc2 ([#178](https://github.com/karelvanhecke/kubelet-serving-approver/issues/178)) ([d6cc4d5](https://github.com/karelvanhecke/kubelet-serving-approver/commit/d6cc4d535ee9c11945663eedd590291b2de9f4ba))
+* **deps:** update kubernetes monorepo to v0.37.2 ([#182](https://github.com/karelvanhecke/kubelet-serving-approver/issues/182)) ([4b1ef99](https://github.com/karelvanhecke/kubelet-serving-approver/commit/4b1ef998f69f5785291c1f08717f46a456eec0d5))
+* **deps:** update module golang.org/x/net to v0.62.0 [security] ([#181](https://github.com/karelvanhecke/kubelet-serving-approver/issues/181)) ([82808df](https://github.com/karelvanhecke/kubelet-serving-approver/commit/82808df33874ba4ae1cfcb5034d0c368f1682025))
+
 ## [0.1.10](https://github.com/karelvanhecke/kubelet-serving-approver/compare/v0.1.9...v0.1.10) (2026-10-23)
 
 
