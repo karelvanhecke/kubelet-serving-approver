@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.12](https://github.com/karelvanhecke/kubelet-serving-approver/compare/v0.1.11...v0.1.12) (2026-11-06)
+
+
+### Bug Fixes
+
+* **deps:** update module github.com/spf13/pflag to v1.1.0 ([#189](https://github.com/karelvanhecke/kubelet-serving-approver/issues/189)) ([ab16c12](https://github.com/karelvanhecke/kubelet-serving-approver/commit/ab16c1294653f4f4dd0d510a1cc8e46fda971873))
+
 ## [0.1.11](https://github.com/karelvanhecke/kubelet-serving-approver/compare/v0.1.10...v0.1.11) (2026-11-04)
 
 
