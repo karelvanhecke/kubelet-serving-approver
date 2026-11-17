@@ -1,5 +1,15 @@
 # Changelog
 
+## [0.1.12](https://github.com/karelvanhecke/kubelet-serving-approver/compare/v0.1.11...v0.1.12) (2026-11-17)
+
+
+### Bug Fixes
+
+* **deps:** update gcr.io/distroless/static-debian13:nonroot docker digest to aafe993 ([#193](https://github.com/karelvanhecke/kubelet-serving-approver/issues/193)) ([f62f41a](https://github.com/karelvanhecke/kubelet-serving-approver/commit/f62f41a071e31c9190db97c7183989f7d58a45a2))
+* **deps:** update go to v1.27.4 ([#192](https://github.com/karelvanhecke/kubelet-serving-approver/issues/192)) ([067a846](https://github.com/karelvanhecke/kubelet-serving-approver/commit/067a846eab14bb8f848adbe3e1128ae6488fa999))
+* **deps:** update module github.com/spf13/pflag to v1.1.0 ([#189](https://github.com/karelvanhecke/kubelet-serving-approver/issues/189)) ([ab16c12](https://github.com/karelvanhecke/kubelet-serving-approver/commit/ab16c1294653f4f4dd0d510a1cc8e46fda971873))
+* **deps:** update module sigs.k8s.io/controller-runtime to v0.25.3 ([#194](https://github.com/karelvanhecke/kubelet-serving-approver/issues/194)) ([13756cd](https://github.com/karelvanhecke/kubelet-serving-approver/commit/13756cd6b9d9c480db72cbe7ee0232c04a607159))
+
 ## [0.1.11](https://github.com/karelvanhecke/kubelet-serving-approver/compare/v0.1.10...v0.1.11) (2026-11-04)
 
 
