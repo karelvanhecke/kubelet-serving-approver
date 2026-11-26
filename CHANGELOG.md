@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.13](https://github.com/karelvanhecke/kubelet-serving-approver/compare/v0.1.12...v0.1.13) (2026-11-26)
+
+
+### Bug Fixes
+
+* **deps:** update kubernetes monorepo to v0.37.3 ([#207](https://github.com/karelvanhecke/kubelet-serving-approver/issues/207)) ([22bb9b8](https://github.com/karelvanhecke/kubelet-serving-approver/commit/22bb9b88fbdfa077c6ea2804b067df2bb4fa15d7))
+
 ## [0.1.12](https://github.com/karelvanhecke/kubelet-serving-approver/compare/v0.1.11...v0.1.12) (2026-11-17)
 
 
